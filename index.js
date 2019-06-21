@@ -1,13 +1,32 @@
 var postcss = require('postcss')
 
-module.exports = postcss.plugin('postcss-flex-safari', function (opts) {
-  opts = opts || {}
+const flexProps = [
+  'flex',
+  'flex-basis',
+  'flex-direction',
+  'flex-flow',
+  'flex-grow',
+  'flex-shrink',
+  'flex-wrap',
+  'align-items',
+  'justify-content'
+]
 
-  // Work with options here
+module.exports = postcss.plugin('postcss-flex-safari', () => css => {
+  css.walkRules(rule => {
+    rule.walkDecls('display', decl => {
+      const {value} = decl
+      if (/^flex$|^inline-flex$/.test(value)) {
+        decl.cloneAfter({value: '-webkit-' + value})
+      }
+    })
 
-  return function (root, result) {
-
-    // Transform CSS AST here
-
+    for (flexProp in flexProps) {
+      rule.walkDecls(flexProp, decl => {
+        if (!rule.some(({prop}) => prop === `-webkit-${flexProp}`)) {
+          decl.cloneAfter({prop: `-webkit-${flexProp}`})
+        }
+      })
+    }
   }
-})
+}
