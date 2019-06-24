@@ -2,8 +2,13 @@ var postcss = require('postcss')
 
 var plugin = require('./')
 
-    expect(result.warnings()).toHaveLength(0)
-  })
+function run(input, output){
+  return postcss([plugin()]).process(input)
+    .then(function(result) {
+      expect(result.css).toEqual(output)
+      expect(result.warnings()).toHaveLength(0)
+    }
+  )
 }
 
 it('Add "display: -webkit-flex" below "display: flex"', function() {
