@@ -1,6 +1,6 @@
 var postcss = require('postcss')
 
-const flexProps = [
+var flexProps = [
   'flex',
   'flex-basis',
   'flex-direction',
@@ -21,12 +21,13 @@ module.exports = postcss.plugin('postcss-flex-safari', () => css => {
       }
     })
 
-    for (flexProp in flexProps) {
-      rule.walkDecls(flexProp, decl => {
-        if (!rule.some(({prop}) => prop === `-webkit-${flexProp}`)) {
-          decl.cloneAfter({prop: `-webkit-${flexProp}`})
+    for (var i = 0; i < flexProps.length; i++) {
+      console.log(flexProps[i])
+      rule.walkDecls(flexProps[i], decl => {
+        if (!rule.some(({prop}) => prop === `-webkit-${flexProps[i]}`)) {
+          decl.cloneAfter({prop: `-webkit-${flexProps[i]}`})
         }
       })
     }
-  }
-}
+  })
+})
