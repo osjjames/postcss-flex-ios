@@ -12,7 +12,7 @@ var flexProps = [
   'justify-content'
 ]
 
-module.exports = postcss.plugin('postcss-flex-safari', () => css => {
+module.exports = postcss.plugin('postcss-flex-ios', () => css => {
   css.walkRules(rule => {
     rule.walkDecls('display', decl => {
       const {value} = decl

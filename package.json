@@ -1,12 +1,12 @@
 {
-  "name": "postcss-flex-safari",
+  "name": "postcss-flex-ios",
   "version": "0.0.0",
-  "description": "PostCSS plugin that includes `-webkit-` prefixes for all flexbox properties to ensure correct functionality in Safari",
+  "description": "PostCSS plugin that includes `-webkit-` prefixes for all flexbox properties to ensure correct functionality in old iOS browsers",
   "keywords": [
     "postcss",
     "css",
     "postcss-plugin",
-    "safari",
+    "ios",
     "webkit",
     "polyfill"
   ],
@@ -15,11 +15,11 @@
   },
   "author": "osjjames <osj.james@gmail.com>",
   "license": "MIT",
-  "repository": "osjjames/postcss-flex-safari",
+  "repository": "osjjames/postcss-flex-ios",
   "bugs": {
-    "url": "https://github.com/osjjames/postcss-flex-safari/issues"
+    "url": "https://github.com/osjjames/postcss-flex-ios/issues"
   },
-  "homepage": "https://github.com/osjjames/postcss-flex-safari",
+  "homepage": "https://github.com/osjjames/postcss-flex-ios",
   "dependencies": {
     "postcss": "^7.0.6"
   },
