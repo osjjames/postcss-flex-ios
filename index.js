@@ -22,7 +22,6 @@ module.exports = postcss.plugin('postcss-flex-ios', () => css => {
     })
 
     for (var i = 0; i < flexProps.length; i++) {
-      console.log(flexProps[i])
       rule.walkDecls(flexProps[i], decl => {
         if (!rule.some(({prop}) => prop === `-webkit-${flexProps[i]}`)) {
           decl.cloneAfter({prop: `-webkit-${flexProps[i]}`})
