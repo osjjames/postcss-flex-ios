@@ -1,6 +1,6 @@
 {
   "name": "postcss-flex-ios",
-  "version": "0.0.0",
+  "version": "1.0.1",
   "description": "PostCSS plugin that includes `-webkit-` prefixes for all flexbox properties to ensure correct functionality in old iOS browsers",
   "keywords": [
     "postcss",
