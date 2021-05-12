@@ -21,7 +21,7 @@
   },
   "homepage": "https://github.com/osjjames/postcss-flex-ios",
   "dependencies": {
-    "postcss": "^7.0.6"
+    "postcss": "^8.2.10"
   },
   "devDependencies": {
     "jest": "^23.6.0"
